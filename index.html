@@ -42,12 +42,11 @@
         const sec = document.querySelector('#sec');
         let leftTime = 0;
         // 시 분 초를 받아서 초로 변환해서 합쳐서 전체 초를 구하고 1초씩 빼면서
-        // 화면으로 다시 시 분 초 형식으로 넣어주는 방식으로 구현하려고했습니다.
+        // 화면으로 다시 시 분 초 형식으로 넣어주는 방식으로 구현하려고 했습니다.
         
-        // 예외처리 -> 시,분,초 (60) 넘어가지 않게 2자리 넘어가면 입력되지않도록 
         // e.target 이 start 면 시작, stop 이면 정지 reset 이면 리셋 되도록 구현하려고 했습니다.     
         
-        startBtn.addEventListener('click', ()=>{
+        startBtn.addEventListener('click', ()=> {
             console.log(`start clicked`);
             let getHour = parseInt(hour.textContent);
             let getMin = parseInt(min.textContent);
@@ -56,12 +55,18 @@
             console.log(`${'0'+getHour} : ${getMin} : ${getSec}`);
             console.log(leftTime);
 
-            const calc = function() {
+            const calcLeftTime = function() {
                 leftTime = leftTime -1;
                 return console.log(`${leftTime}`);
             }
-            setInterval(calc,1000);
+            setInterval(calcLeftTime,1000);
+
+            const calcHms = function(time) {
+                
+            }
         })
+
+
 
         
     </script>
