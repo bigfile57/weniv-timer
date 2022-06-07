@@ -1,0 +1,42 @@
+#app{
+    width: 100%;
+    height: 100vh;
+    background: radial-gradient(96.74% 276.79% at 3.59% 5.28%, #F0F4FF 0%, #A5B6EE 100%);
+}
+.wrap-main{
+    width: 400px;
+    border: 1px solid black;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.wrap-timer {
+    border: 1px solid black;
+    padding: 48px 58px 40px 58px;
+    
+}
+.wrap-main .cont-timer {
+    display: flex;
+    justify-content: space-between;
+    width: 284px;
+}
+.div-time .txt-time {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(314.28deg, #304577 0%, #4C65A0 83%);
+    border: 1px solid #354971;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 80px;
+    font-size: 40px;
+    font-weight: 700;
+    color: #fff;
+}
+span {
+    display: block;
+    font-size: 12px;
+    color: #A5B6EE;
+    text-align: center;
+    margin-bottom: 4px;
+}

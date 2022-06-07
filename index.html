@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weniv timer</title>
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="wrap-main">
+            <header class="heading">weniv</header>
+            <section class="wrap-timer">
+                <h1>TIMER</h1>
+                <hr>
+                <div class="cont-timer">
+                    <div class="div-time">
+                        <span>HRS</span>
+                        <div class="txt-time" contenteditable="true" id="hrs">00</div>
+                    </div>
+                    <div class="div-time">
+                        <span>MIN</span>
+                        <div class="txt-time" contenteditable="true" id="min">00</div>
+                    </div>
+                    <div class="div-time">
+                        <span>SEC</span>
+                        <div class="txt-time" contenteditable="true" id="sec">00</div>
+                    </div>
+                </div>
+                <button type="button" class="btn-start">START</button>
+                <button type="button" class="btn-reset">RESET</button>
+            </section>
+            <footer class="footer">WENIV CORP.</footer>
+        </div>
+    </div>
+    <script>
+        const startBtn = document.querySelector('.btn-start');
+        const hour = document.querySelector('#hrs');
+        const min = document.querySelector('#min');
+        const sec = document.querySelector('#sec');
+        let leftTime = 0;
+        // 시 분 초를 받아서 초로 변환해서 합쳐서 전체 초를 구하고 1초씩 빼면서
+        // 화면으로 다시 시 분 초 형식으로 넣어주는 방식으로 구현하려고했습니다.
+        
+        // 예외처리 -> 시,분,초 (60) 넘어가지 않게 2자리 넘어가면 입력되지않도록 
+        // e.target 이 start 면 시작, stop 이면 정지 reset 이면 리셋 되도록 구현하려고 했습니다.     
+        
+        startBtn.addEventListener('click', ()=>{
+            console.log(`start clicked`);
+            let getHour = parseInt(hour.textContent);
+            let getMin = parseInt(min.textContent);
+            let getSec = parseInt(sec.textContent);
+            leftTime = getHour*3600 + getMin*60 + getSec*60;
+            console.log(`${'0'+getHour} : ${getMin} : ${getSec}`);
+            console.log(leftTime);
+
+            const calc = function() {
+                leftTime = leftTime -1;
+                return console.log(`${leftTime}`);
+            }
+            setInterval(calc,1000);
+        })
+
+        
+    </script>
+</body>
+</html>
